@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>user page</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}""/>
+  </head>
+  <body>
+    <h1>Here are your users:</h1>
+    <ul>
+      {% if users %}
+        <h2>Found user list!</h2>
+          {% for u in users %}
+          <li>User Info:</li>
+          <ul>
+            <li>First Name: {{ u.top_name.first_name }}</li>
+            <li>Last Name: {{ u.top_name.last_name }}</li>
+            <li>Email: {{ u.email }} </li>
+          </ul>
+          {% endfor %}
+      {% endif%}
+    </ul>
+  </body>
+</html>
